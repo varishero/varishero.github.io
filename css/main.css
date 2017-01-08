@@ -2007,6 +2007,10 @@ ul.list li a:hover {
 
 
 @media screen and (max-width: 400px) {
+	.navbar.navbar-inverse.navbar-static-top .logo a{
+		font-size: 26px;
+		line-height: 26px !important;		
+	}
 	ul.portfolioContainer li {
 		width:100% !important;
 	}
