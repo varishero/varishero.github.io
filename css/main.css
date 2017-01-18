@@ -190,7 +190,7 @@ h4.subHeading{
 .heading{
 	text-align:center;
 	position:relative;
-	max-width:570px;
+	/*max-width:570px;*/
 	margin:0 auto;
 	padding-bottom:26px;
 	margin-bottom:20px;
