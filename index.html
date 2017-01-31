@@ -30,7 +30,198 @@
 
 <!-- font icon css style-->
 <link rel="stylesheet" href="css/font-awesome.min.css">
+<!--modernizr js--> 
+<script type="text/javascript" src="js/modernizr.custom.26633.js"></script> 
+<!--jquary min js--> 
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script> 
+<script src="js/bootstrap.min.js"></script> 
 
+<!--for placeholder jquery--> 
+<script type="text/javascript" src="js/jquery.placeholder.js"></script> 
+
+<!--for header jquery--> 
+<script type="text/javascript" src="js/stickUp.js"></script> 
+<script src="js/jquery.superslides.js" type="text/javascript" charset="utf-8"></script> 
+<script type="text/javascript">
+	$('#banner').superslides({
+	  animation: 'fade',
+	  play: false
+	});
+</script> 
+
+<!--for portfolio jquery--> 
+<script src="js/jquery.isotope.js" type="text/javascript"></script>
+<link rel='stylesheet' property='stylesheet' id='theme'  href='css/jquery-ui-1.8.16.custom.css' type='text/css' media='all' />
+<link rel='stylesheet' property='stylesheet'  href='css/lightbox.min.css' type='text/css' media='all' />
+<script type="text/javascript" src="js/jquery.ui.widget.min.js"></script> 
+<script type="text/javascript" src="js/jquery.ui.rlightbox.js"></script> 
+
+<!--contact form js--> 
+<script type="text/javascript" src="js/jquery.contact.js"></script> 
+<script src="http://maps.google.com/maps?file=api&amp;v=2.x&amp;key=ABQIAAAAjU0EJWnWPMv7oQ-jjS7dYxSPW5CJgpdgO_s4yyMovOaVh_KvvhSfpvagV18eOyDWu7VytS6Bi1CWxw" type="text/javascript"></script> 
+
+
+<script type="text/javascript">
+    //<![CDATA[
+    var map;
+
+    function load() {
+      if (GBrowserIsCompatible()) {
+        map = new GMap2(document.getElementById("map"));
+        map.setCenter(new GLatLng(-37.817682, 144.957595), 13);
+        document.getElementById("map").checked = true;
+        toggleZoom(false);
+      }
+    }
+
+    function toggleZoom(isChecked) {
+      if (isChecked) {
+        map.enableScrollWheelZoom();
+      } else {
+        map.disableScrollWheelZoom();
+      }
+    }
+
+    //]]>
+</script> 
+
+<!--about jquery--> 
+<script defer src="js/jquery.flexslider.js"></script> 
+
+<!--for coundown jquary--> 
+<script type="text/javascript" src="js/jquery.countTo.js"></script> 
+ 
+<script src="js/jquery.easing.js"></script> 
+<script src="js/jquery.mousewheel.js"></script> 
+<script defer src="js/slideroption.js"></script> 
+<script type="text/javascript">
+jQuery(function($) {
+$(document).ready( function() {
+	"use strict";						
+	//enabling stickUp on the '.navbar-wrapper' class
+		$('.navbar-wrapper').stickUp({
+			parts: {
+			  0: 'banner',
+			  1: 'about',
+			  2: 'services',
+			  3: 'works',
+			  // 4: 'team',
+			  // 5: 'testimonial',
+			  // 6: 'blog',
+			  4: 'contact'
+			},
+			itemClass: 'menuItem',
+			itemHover: 'active',
+			topMargin: 'auto'
+			});
+		
+		// run rlightbox
+		$( ".lb" ).rlightbox();
+		$( ".lb_title-overwritten" ).rlightbox({overwriteTitle: true});
+		
+		$('.flexslider').flexslider({
+			animation: "fade",
+			animationLoop: true,
+			slideshow: true,
+			pauseOnAction: false,
+			slideshowSpeed: 7000,
+			controlNav: true,
+			start: function(slider){
+			$('body').removeClass('loading');
+			}
+		});
+		
+		//Home Testimonial 
+		var activeImage;
+		var getmaxHeight = 0;
+		$(".testimonialText li").each(function(index, element) {
+			if($(this).height()>getmaxHeight){
+				getmaxHeight = $(this).height();
+				$(".footerTopContent").height(getmaxHeight);
+				}
+		});
+		
+		$(".testimonialText li").fadeTo("fast",0);
+		$(".testimonialText li:first").fadeTo("fast",1);
+		$(".imageSlide .imageBox").removeClass("activeImage");
+		$(".imageSlide .imageBox:first").addClass("activeImage");
+		$(".imageSlide .imageBox").mouseenter(function(){
+			if(!$(this).hasClass("activeImage")){
+				var gi = $(this).index();
+				//console.log(gi);
+				$(".imageSlide .imageBox").removeClass("activeImage");
+				$(this).addClass("activeImage");
+				$(".testimonialText li").fadeTo("fast",0);
+				$(".testimonialText li:eq("+gi+")").fadeTo("fast",1);
+				}
+		})
+		
+	if ($(window).width() > 960) {
+	  $('.worklogo').flexslider({
+		animation: "slide",
+		slideshow: true,
+		itemWidth: 186,
+		itemMargin: 0,	
+	  });
+	}
+	else {
+	  $('.worklogo').flexslider({
+		animation: "slide",
+		slideshow: true,
+		itemWidth: 186,
+		itemMargin: -2,	
+	  });
+	}
+	
+	});
+
+	// for client work jquary
+/*	var windowBottom = $(window).height()+0;
+	var index=0;
+	$(document).scroll(function(){
+		divposition = parseInt($('.factabout').offset().top);
+		divsrollpos = parseInt($(window).scrollTop());
+		ctop = parseInt(divposition-divsrollpos);
+		if(ctop<Math.round(windowBottom/2)){
+			if(index==0){	
+				
+				$('.timer').each(count);
+				
+			}
+			index++;
+		}
+	});
+
+
+
+	function count(options) {
+		var $this = $(this);
+		options = $.extend({}, options || {}, $this.data('countToOptions') || {});
+		$this.countTo(options);
+	}*/
+
+});
+</script> 
+<!--for theme custom jquery--> 
+<script src="js/custom.js"></script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script src="js/typewriter/typewriter.js"></script>
+<link rel="stylesheet" href="js/typewriter/typewriter.css">
+<script type="text/javascript">
+angular.module('phox.utils',['phox.typewriter'])
+	.controller('test.controller', ['$scope',
+	    function($scope){
+	   		$scope.sequence = [
+	   			"I'm Web Developer",
+	   			'I Can Make Good Website For you',
+	   			"If You Don't Trust me..",
+          "You Can Look My Portfolio"
+	   		];
+
+	    }
+   ]);
+</script>
 
 </head>
 <body onLoad="load()" onUnload="GUnload()">
@@ -478,198 +669,7 @@
   <a class="gototop smooth" href="#wrapper"><i class="fa fa-caret-up"></i></a> </div>
 <!--wrapper end--> 
 
-<!--modernizr js--> 
-<script type="text/javascript" src="js/modernizr.custom.26633.js"></script> 
-<!--jquary min js--> 
-<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script> 
-<script src="js/bootstrap.min.js"></script> 
 
-<!--for placeholder jquery--> 
-<script type="text/javascript" src="js/jquery.placeholder.js"></script> 
-
-<!--for header jquery--> 
-<script type="text/javascript" src="js/stickUp.js"></script> 
-<script src="js/jquery.superslides.js" type="text/javascript" charset="utf-8"></script> 
-<script type="text/javascript">
-	$('#banner').superslides({
-	  animation: 'fade',
-	  play: false
-	});
-</script> 
-
-<!--for portfolio jquery--> 
-<script src="js/jquery.isotope.js" type="text/javascript"></script>
-<link rel='stylesheet' property='stylesheet' id='theme'  href='css/jquery-ui-1.8.16.custom.css' type='text/css' media='all' />
-<link rel='stylesheet' property='stylesheet'  href='css/lightbox.min.css' type='text/css' media='all' />
-<script type="text/javascript" src="js/jquery.ui.widget.min.js"></script> 
-<script type="text/javascript" src="js/jquery.ui.rlightbox.js"></script> 
-
-<!--contact form js--> 
-<script type="text/javascript" src="js/jquery.contact.js"></script> 
-<script src="http://maps.google.com/maps?file=api&amp;v=2.x&amp;key=ABQIAAAAjU0EJWnWPMv7oQ-jjS7dYxSPW5CJgpdgO_s4yyMovOaVh_KvvhSfpvagV18eOyDWu7VytS6Bi1CWxw" type="text/javascript"></script> 
-
-
-<script type="text/javascript">
-    //<![CDATA[
-    var map;
-
-    function load() {
-      if (GBrowserIsCompatible()) {
-        map = new GMap2(document.getElementById("map"));
-        map.setCenter(new GLatLng(-37.817682, 144.957595), 13);
-        document.getElementById("map").checked = true;
-        toggleZoom(false);
-      }
-    }
-
-    function toggleZoom(isChecked) {
-      if (isChecked) {
-        map.enableScrollWheelZoom();
-      } else {
-        map.disableScrollWheelZoom();
-      }
-    }
-
-    //]]>
-</script> 
-
-<!--about jquery--> 
-<script defer src="js/jquery.flexslider.js"></script> 
-
-<!--for coundown jquary--> 
-<script type="text/javascript" src="js/jquery.countTo.js"></script> 
- 
-<script src="js/jquery.easing.js"></script> 
-<script src="js/jquery.mousewheel.js"></script> 
-<script defer src="js/slideroption.js"></script> 
-<script type="text/javascript">
-jQuery(function($) {
-$(document).ready( function() {
-	"use strict";						
-	//enabling stickUp on the '.navbar-wrapper' class
-		$('.navbar-wrapper').stickUp({
-			parts: {
-			  0: 'banner',
-			  1: 'about',
-			  2: 'services',
-			  3: 'works',
-			  // 4: 'team',
-			  // 5: 'testimonial',
-			  // 6: 'blog',
-			  4: 'contact'
-			},
-			itemClass: 'menuItem',
-			itemHover: 'active',
-			topMargin: 'auto'
-			});
-		
-		// run rlightbox
-		$( ".lb" ).rlightbox();
-		$( ".lb_title-overwritten" ).rlightbox({overwriteTitle: true});
-		
-		$('.flexslider').flexslider({
-			animation: "fade",
-			animationLoop: true,
-			slideshow: true,
-			pauseOnAction: false,
-			slideshowSpeed: 7000,
-			controlNav: true,
-			start: function(slider){
-			$('body').removeClass('loading');
-			}
-		});
-		
-		//Home Testimonial 
-		var activeImage;
-		var getmaxHeight = 0;
-		$(".testimonialText li").each(function(index, element) {
-			if($(this).height()>getmaxHeight){
-				getmaxHeight = $(this).height();
-				$(".footerTopContent").height(getmaxHeight);
-				}
-		});
-		
-		$(".testimonialText li").fadeTo("fast",0);
-		$(".testimonialText li:first").fadeTo("fast",1);
-		$(".imageSlide .imageBox").removeClass("activeImage");
-		$(".imageSlide .imageBox:first").addClass("activeImage");
-		$(".imageSlide .imageBox").mouseenter(function(){
-			if(!$(this).hasClass("activeImage")){
-				var gi = $(this).index();
-				//console.log(gi);
-				$(".imageSlide .imageBox").removeClass("activeImage");
-				$(this).addClass("activeImage");
-				$(".testimonialText li").fadeTo("fast",0);
-				$(".testimonialText li:eq("+gi+")").fadeTo("fast",1);
-				}
-		})
-		
-	if ($(window).width() > 960) {
-	  $('.worklogo').flexslider({
-		animation: "slide",
-		slideshow: true,
-		itemWidth: 186,
-		itemMargin: 0,	
-	  });
-	}
-	else {
-	  $('.worklogo').flexslider({
-		animation: "slide",
-		slideshow: true,
-		itemWidth: 186,
-		itemMargin: -2,	
-	  });
-	}
-	
-	});
-
-	// for client work jquary
-/*	var windowBottom = $(window).height()+0;
-	var index=0;
-	$(document).scroll(function(){
-		divposition = parseInt($('.factabout').offset().top);
-		divsrollpos = parseInt($(window).scrollTop());
-		ctop = parseInt(divposition-divsrollpos);
-		if(ctop<Math.round(windowBottom/2)){
-			if(index==0){	
-				
-				$('.timer').each(count);
-				
-			}
-			index++;
-		}
-	});
-
-
-
-	function count(options) {
-		var $this = $(this);
-		options = $.extend({}, options || {}, $this.data('countToOptions') || {});
-		$this.countTo(options);
-	}*/
-
-});
-</script> 
-<!--for theme custom jquery--> 
-<script src="js/custom.js"></script>
-
-<!--<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-<script src="js/typewriter/typewriter.js"></script>
-<link rel="stylesheet" href="js/typewriter/typewriter.css">
-<script type="text/javascript">
-angular.module('phox.utils',['phox.typewriter'])
-	.controller('test.controller', ['$scope',
-	    function($scope){
-	   		$scope.sequence = [
-	   			"I'm Web Developer",
-	   			'I Can Make Good Website For you',
-	   			"If You Don't Trust me..",
-          "You Can Look My Portfolio"
-	   		];
-
-	    }
-   ]);
-</script>-->
 </body>
 <!--Google Analysisi-->
 <script>
