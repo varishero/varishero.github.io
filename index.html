@@ -508,23 +508,7 @@
 <script type="text/javascript" src="js/jquery.contact.js"></script> 
 <script src="http://maps.google.com/maps?file=api&amp;v=2.x&amp;key=ABQIAAAAjU0EJWnWPMv7oQ-jjS7dYxSPW5CJgpdgO_s4yyMovOaVh_KvvhSfpvagV18eOyDWu7VytS6Bi1CWxw" type="text/javascript"></script> 
 
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-<script src="js/typewriter/typewriter.js"></script>
-<link rel="stylesheet" href="js/typewriter/typewriter.css">
-<script type="text/javascript">
-angular.module('phox.utils',['phox.typewriter'])
-	.controller('test.controller', ['$scope',
-	    function($scope){
-	   		$scope.sequence = [
-	   			"I'm Web Developer",
-	   			'I Can Make Good Website For you',
-	   			"If You Don't Trust me..",
-          "You Can Look My Portfolio"
-	   		];
 
-	    }
-   ]);//End Controlller
-</script>
 <script type="text/javascript">
     //<![CDATA[
     var map;
@@ -668,6 +652,24 @@ $(document).ready( function() {
 </script> 
 <!--for theme custom jquery--> 
 <script src="js/custom.js"></script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script src="js/typewriter/typewriter.js"></script>
+<link rel="stylesheet" href="js/typewriter/typewriter.css">
+<script type="text/javascript">
+angular.module('phox.utils',['phox.typewriter'])
+	.controller('test.controller', ['$scope',
+	    function($scope){
+	   		$scope.sequence = [
+	   			"I'm Web Developer",
+	   			'I Can Make Good Website For you',
+	   			"If You Don't Trust me..",
+          "You Can Look My Portfolio"
+	   		];
+
+	    }
+   ]);//End Controlller
+</script>
 </body>
 <!--Google Analysisi-->
 <script>
