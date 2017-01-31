@@ -25,8 +25,24 @@
 
 <!-- font icon css style-->
 <link rel="stylesheet" href="css/font-awesome.min.css">
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script src="js/typewriter/typewriter.js"></script>
+<link rel="stylesheet" href="js/typewriter/typewriter.css">
+<script type="text/javascript">
+angular.module('phox.utils',['phox.typewriter'])
+	.controller('test.controller', ['$scope',
+	    function($scope){
+	   		$scope.sequence = [
+	   			"I'm Web Developer",
+	   			'I Can Make Good Website For you',
+	   			"If You Don't Trust me..",
+          "You Can Look My Portfolio"
+	   		];
+
+	    }
+   ]);
+</script>
 </head>
 <body>
 
@@ -623,22 +639,7 @@ $(document).ready( function() {
 <script src="js/custom.js"></script>
 
 
-<script src="js/typewriter/typewriter.js"></script>
-<link rel="stylesheet" href="js/typewriter/typewriter.css">
-<script type="text/javascript">
-angular.module('phox.utils',['phox.typewriter'])
-	.controller('test.controller', ['$scope',
-	    function($scope){
-	   		$scope.sequence = [
-	   			"I'm Web Developer",
-	   			'I Can Make Good Website For you',
-	   			"If You Don't Trust me..",
-          "You Can Look My Portfolio"
-	   		];
 
-	    }
-   ]);
-</script>
 </body>
 <!--Google Analysisi-->
 <script>
