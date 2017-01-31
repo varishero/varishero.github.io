@@ -30,6 +30,24 @@
 
 <!-- font icon css style-->
 <link rel="stylesheet" href="css/font-awesome.min.css">
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script src="js/typewriter/typewriter.js"></script>
+<link rel="stylesheet" href="js/typewriter/typewriter.css">
+<script>
+angular.module('phox.utils',['phox.typewriter'])
+	.controller('test.controller', ['$scope',
+	    function($scope){
+	   		$scope.sequence = [
+	   			"I'm Web Developer",
+	   			'I Can Make Good Website For you',
+	   			"If You Don't Trust me..",
+          "You Can Look My Portfolio"
+	   		];
+
+	    }
+   ]);//End Controlller
+</script>
 </head>
 <body onLoad="load()" onUnload="GUnload()">
 
@@ -99,7 +117,9 @@
           <!--header text1 start-->
           <div class="container hedaer-inner">
             <div class="bannerText">
-              <h1>Web Developer</h1>
+              <div  ng-app="phox.utils" ng-controller="test.controller">
+              <h1><div typewriter sentences="sequence"></div></h1>
+              </div><!--end ng-app-->
               <h3>Professional Web Developer</h3>
               <p>Creating website user experience and responsive all devices.<br>
                 We are ready to make a better website.</p>
